@@ -1,0 +1,17 @@
+{
+  "name": "fslock",
+  "version": "0.9.0",
+  "description": "filesystem mutex using an exclusive-open file",
+  "main": "fslock.js",
+  "license": "Apache-2.0",
+
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "qnit --version || npm install qnit ; qnit test-*",
+    "coverage": "nyc -r lcov -r text npm run test",
+    "clean": "rm -rf .nyc_output coverage"
+  }
+}

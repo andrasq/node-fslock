@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 0.10
+  - 6
+  - 8
+  - 9
+  - 10
+after_success:
+  - if [ `node -p 'process.version.slice(0, 3)'` != "v8." ]; then exit; fi
+  - npm install -g nyc@8.4.0 codecov
+  - nyc --reporter lcov npm test && codecov
