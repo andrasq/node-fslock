@@ -1,5 +1,8 @@
 fslock
 ======
+[![Build Status](https://api.travis-ci.org/andrasq/node-fslock.svg?branch=master)](https://travis-ci.org/andrasq/node-fslock?branch=master)
+[![Coverage Status](https://codecov.io/github/andrasq/node-fslock/coverage.svg?branch=master)](https://codecov.io/github/andrasq/node-fslock?branch=master)
+
 
 Set filesystem advisory locks containing the process-id of the owning process.
 No dependencies.
