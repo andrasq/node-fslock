@@ -28,6 +28,11 @@ function FsLock( options ) {
 
 /*
  * helper function to verify that process `pid` is not running or is not ours
+ * Returns false if the process is ours and is running, or is not ours.
+ *      Ex      Ours    Ret     Notes
+ *      N       Y,N     T       ESRCH error
+ *      Y       N       F       EPERM error
+ *      Y       Y       F       no error
  */
 FsLock.prototype.processNotExists = function processNotExists( pid ) {
     if (!(pid > 0)) return true;

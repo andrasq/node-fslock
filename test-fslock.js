@@ -86,8 +86,25 @@ module.exports = {
     },
 
     'processNotExists': {
+        'existing process owned by us should exist': function(t) {
+            t.ok(!fslock.processNotExists(process.pid));
+            t.done();
+        },
+
+        'existing process not owned by us should exist': function(t) {
+            t.ok(!fslock.processNotExists(1));
+            t.done();
+        },
+
+        'non-existing process should not exist': function(t) {
+            t.ok(fslock.processNotExists(9999999));
+            t.done();
+        },
+
         'invalid pids should not exist': function(t) {
             t.ok(fslock.processNotExists('not a pid'));
+            t.ok(fslock.processNotExists({}));
+            t.ok(fslock.processNotExists(function(){}));
             t.done();
         },
     },
