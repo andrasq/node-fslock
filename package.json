@@ -4,6 +4,7 @@
   "description": "filesystem mutex using an exclusive-open file",
   "main": "fslock.js",
   "license": "Apache-2.0",
+  "keywords": [ "lock", "mutex", "process", "server", "daemon", "pid", "O_EXCL" ],
 
   "dependencies": {
   },
