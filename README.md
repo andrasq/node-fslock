@@ -9,7 +9,7 @@ No dependencies.
 
     fslock = require('qfslock');
 
-    fslock('/var/lock/my.lock', process.pid);
+    fslock.setLock('/var/lock/my.lock', process.pid);
     // fs.existsSync('/var/lock/my.lock') => true
     
     fslock.clearLock('/var/lock/my.lock', process.pid);
