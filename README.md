@@ -36,9 +36,9 @@ exist, but its lockfile will not have the right permissions to be removed by us.
 
 ### fslock.processNotExists( pid )
 
-Helper function that tests whether our child process has already exited, or is still
-running.  Returns `true` if process id `pid` does not exist or is not ours, and
-`false` if that process is ours and is still running.
+Helper function that tests whether a process has already exited, or is still
+running.  Returns `true` if process id `pid` does not exist, and false otherwise.
+Non-numeric process-ids do not exist.
 
 
 Change Log

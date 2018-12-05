@@ -5,11 +5,15 @@
   "main": "fslock.js",
   "license": "Apache-2.0",
   "keywords": [ "lock", "mutex", "process", "server", "daemon", "pid", "O_EXCL" ],
+  "author": "andrasq",
+  "repository": "git://github.com/andrasq/node-fslock",
+  "readme": "see README.md in the repo",
 
   "dependencies": {
   },
   "devDependencies": {
   },
+
   "scripts": {
     "test": "qnit --version || npm install qnit ; qnit test-*",
     "coverage": "nyc -r lcov -r text npm run test",
