@@ -45,7 +45,7 @@ FsLock.prototype.processNotExists = function processNotExists( pid ) {
  * If the mutex exists but the that process is gone, override the old lock.
  */
 FsLock.prototype.setLock = function setLock( lockfile, ownerPid ) {
-    var fd, self = this;
+    var fd;
 
     try {
         fd = fs.openSync(lockfile, 'wx');
@@ -55,19 +55,20 @@ FsLock.prototype.setLock = function setLock( lockfile, ownerPid ) {
     }
     catch (err) {
         if (err.code === 'EEXIST') {
-            breakAbandonedLock(lockfile);
-            setLock(lockfile, ownerPid);
+            this._breakAbandonedLock(lockfile);
+            this.setLock(lockfile, ownerPid);
         }
         else throw err;
     }
+}
 
-    // break the lock if is abandoned, or throw if cannot break
-    function breakAbandonedLock( lockfile ) {
-        var pid = fs.readFileSync(lockfile);
+
+// break the lock if is abandoned, or throw if cannot break
+FsLock.prototype._breakAbandonedLock = function _breakAbandonedLock( lockfile ) {
+    var pid = fs.readFileSync(lockfile);
 // TODO: optionally only break if lock is ours (contains our ownerPid)
-        if (self.processNotExists(pid)) fs.unlinkSync(lockfile);
-        else throw new Error(lockfile + ': cannot break lock, process ' + pid + ' exists');
-    }
+    if (this.processNotExists(pid)) fs.unlinkSync(lockfile);
+    else throw new Error(lockfile + ': cannot break lock, process ' + pid + ' exists');
 }
 
 /*
