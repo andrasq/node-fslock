@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "keywords": [ "lock", "mutex", "process", "server", "daemon", "pid", "O_EXCL" ],
   "author": "andrasq",
-  "repository": "git://github.com/andrasq/node-fslock",
+  "repository": { "type": "git", "url": "git://github.com/andrasq/node-fslock" },
   "readme": "see README.md in the repo",
 
   "dependencies": {
