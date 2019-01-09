@@ -1,7 +1,6 @@
 qfslock
 =======
 [![Build Status](https://api.travis-ci.org/andrasq/node-fslock.svg?branch=master)](https://travis-ci.org/andrasq/node-fslock?branch=master)
-[![Coverage Status](https://codecov.io/github/andrasq/node-fslock/coverage.svg?branch=master)](https://codecov.io/github/andrasq/node-fslock?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/andrasq/node-fslock/badge.svg?branch=master)](https://coveralls.io/github/andrasq/node-fslock?branch=master)
 
 
@@ -45,4 +44,5 @@ Non-numeric process-ids do not exist.
 Change Log
 ----------
 
+- 0.9.1 - added license file
 - 0.9.0 - split out from qworker and refactored into a class
